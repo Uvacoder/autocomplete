@@ -11,6 +11,7 @@ This project demonstrates the Search Bar with Autocomplete feature in a Create R
     - [x] Search Debouncing
     - [x] Searching Indicator
     - [x] Mock Service Worker for the Autocomplete API mock 
+    - [x] Save the last x number of searches (configurable)
 
 - Credits    
     - Mock data generated from https://www.mockaroo.com/

@@ -1,4 +1,4 @@
-import "./SearchBar.css";
+import "./SearchPreview.css";
 export const SearchPreview: React.FC<any> = ({
   age,
   name,
