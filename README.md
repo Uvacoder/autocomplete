@@ -12,6 +12,7 @@ This project demonstrates the Search Bar with Autocomplete feature in a Create R
     - [x] Searching Indicator
     - [x] Mock Service Worker for the Autocomplete API mock 
     - [x] Save the last x number of searches (configurable)
+    - [x] React Testing Library for React Hooks integration to test the custom hook `useAutoComplete`
 
 - Credits    
     - Mock data generated from https://www.mockaroo.com/

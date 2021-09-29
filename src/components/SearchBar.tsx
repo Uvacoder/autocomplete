@@ -5,36 +5,18 @@ import { SavedSearch } from "./SavedSearch";
 import { useAutoComplete } from "./useAutoComplete";
 
 export const SearchBar: React.FC<any> = () => {
-  const { results, keyword, updateField, searching, savedKeywords } =
-    useAutoComplete();
-  const [showSavedKeywords, setShowSavedKeywords] = React.useState(false);
+  const {
+    results,
+    keyword,
+    searching,
+    savedKeywords,
+    showSavedKeywords,
+    cancelSearch,
+    handleSavedListEvent,
+    updateField,
+    updateQuery,
+  } = useAutoComplete();
 
-  const updateText = (text: any, update = false) => {
-    setShowSavedKeywords(update);
-    updateField("keyword", text, update);
-    if (!update) {
-      updateField("results", []);
-    }
-  };
-
-  const cancelSearch = () => {
-    setShowSavedKeywords(false);
-    updateField("keyword", "");
-  };
-
-  const handleSavedListEvent = (
-    e:
-      | React.MouseEvent<HTMLInputElement, MouseEvent>
-      | React.KeyboardEvent<HTMLInputElement>
-  ) => {
-    if (
-      e.type === "mousedown" ||
-      (e as React.KeyboardEvent)?.key === "ArrowDown"
-    ) {
-      setShowSavedKeywords(true);
-    }
-  };
-  // console.log(results);
   //renders our results using the SearchPreview component
   return (
     <div className="auto">
@@ -68,7 +50,7 @@ export const SearchBar: React.FC<any> = () => {
                 return (
                   <SavedSearch
                     key={`${text}-${index}`}
-                    updateText={updateText}
+                    updateQuery={updateQuery}
                     index={index}
                     text={text}
                   />
@@ -84,7 +66,7 @@ export const SearchBar: React.FC<any> = () => {
             return (
               <SearchPreview
                 key={index}
-                updateText={updateText}
+                updateQuery={updateQuery}
                 index={index}
                 position={position}
                 name={name}

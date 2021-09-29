@@ -4,11 +4,11 @@ export const SearchPreview: React.FC<any> = ({
   name,
   position,
   index,
-  updateText,
+  updateQuery,
 }) => {
   return (
     <div
-      onClick={() => updateText(name)}
+      onClick={() => updateQuery(name)}
       className={`search-preview ${index === 0 ? "start" : ""}`}
     >
       <div className="first">
